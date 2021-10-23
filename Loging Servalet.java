@@ -6,17 +6,17 @@ public class LoginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
-		String userName = request.getParameter(username"); //
+		String userName = request.getParameter("username"); 
 		String password = request.getParameter("password")
 		
-		boolean isTrue
+		boolean isTrue;
 		
-		isTrue = CustomerDB.validate(userName, password); //
+		isTrue = CustomerDBUtil.validate(userName, password); 
 		
 		if (isTrue == true) {
 			
 			List<Customer> cusDetails = CustomerDBUtil.getCustomer(userName);
-			request.setAttribute("cusDetails, cusDetails);//
+			request.setAttribute("cusDetails, cusDetails");
 			
 			RequestDispatcher dis = request.getRequestDispatcher("useraccount.jsp"); 
 			dis.forward("request, response"); //
@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
 			out.println("<script type='text/javascript'>");
 			out.println("alert('Your username or password is incorrect');"); 
 			out.println("location='login.jsp'"); 
-			out.println("</script"); //
+			out.println("</script>"); 
 		}
 		
 	}
