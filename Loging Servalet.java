@@ -15,8 +15,8 @@ public class LoginServlet extends HttpServlet {
 		
 		if (isTrue == true) {
 			
-			List<Customer> cusDetails = CustomerDBUtil.getcustomer(userName); //
-			request.setAttribute("cusDetails", cusDetails);
+			List<Customer> cusDetails = CustomerDBUtil.getCustomer(userName);
+			request.setAttribute("cusDetails, cusDetails);//
 			
 			RequestDispatcher dis = request.getRequestDispatcher("useraccount.jsp"); 
 			dis.forward("request, response"); //
